@@ -1,0 +1,18 @@
+<odoo>
+    <record id="module_category_gestion_ejemplos" model="ir.module.category">
+        <field name="name">Ejemplos</field>
+        <field name="description">Gestión de Ejemplos</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="group_ejemplo_editor" model="res.groups">
+        <field name="name">Editores de Ejemplo</field>
+        <field name="category_id" ref="module_category_gestion_ejemplos"/>
+    </record>
+
+    <record id="group_ejemplo_admin" model="res.groups">
+        <field name="name">Administradores de Ejemplo</field>
+        <field name="category_id" ref="module_category_gestion_ejemplos"/>
+        <field name="implied_ids" eval="[(4, ref('group_ejemplo_editor'))]"/>
+    </record>
+</odoo>
