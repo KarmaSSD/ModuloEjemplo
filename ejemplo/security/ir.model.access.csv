@@ -1,4 +1,4 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-access_ejemplo_user,ejemplo.user,model_ejemplo,,0,0,0,0
-access_ejemplo_editor,ejemplo.editor,model_ejemplo,ejemplo.group_ejemplo_editor,1,1,0,0
-access_ejemplo_admin,ejemplo.admin,model_ejemplo,ejemplo.group_ejemplo_admin,1,1,1,1
+access_ejemplo_user,ejemplo.user,model_ejemplo_ejemplo,,0,0,0,0
+access_ejemplo_editor,ejemplo.editor,model_ejemplo_ejemplo,ejemplo.group_ejemplo_editor,1,1,0,0
+access_ejemplo_admin,ejemplo.admin,model_ejemplo_ejemplo,ejemplo.group_ejemplo_admin,1,1,1,1

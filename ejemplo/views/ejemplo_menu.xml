@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_root_ejemplo" name="Ejemplo" sequence="10"/>
+
+    <menuitem id="menu_ejemplo_action" name="Gestión de Ejemplos" parent="menu_root_ejemplo" 
+    action="action_ejemplo" sequence="20"/>
+</odoo>
