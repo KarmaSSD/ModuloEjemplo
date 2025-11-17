@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_pc_componente_list" model="ir.ui.view">
+        <field name="name">pc.componente.list</field>
+        <field name="model">pc.componente</field>
+        <field name="arch" type="xml">
+            <list string="componentes">
+                <field name="name"/>
+                <field name="precio"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_pc_componente_form" model="ir.ui.view">
+        <field name="name">pc.componente.form</field>
+        <field name="model">pc.componente</field>
+        <field name="arch" type="xml">
+            <form string="componente">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="especificaciones"/>
+                        <field name="precio"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+</odoo>

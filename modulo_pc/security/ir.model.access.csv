@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pc_componente_user,access_pc_componente_user,model_pc_componente,base.group_user,1,0,0,0
+access_pc_ordenador_user,access_pc_ordenador_user,model_pc_ordenador,base.group_user,1,0,0,0
+access_pc_componente_admin,access_pc_componente_admin,model_pc_componente,modulo_pc.group_modulo_pc_admin,1,1,1,1
+access_pc_ordenador_admin,access_pc_ordenador_admin,model_pc_ordenador,modulo_pc.group_modulo_pc_admin,1,1,1,1
