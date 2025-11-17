@@ -3,14 +3,14 @@
 <odoo>
 
     <record id="group_modulo_pc_user" model="res.groups">
-        <field name="name">usuario modulo pc</field>
-        <field name="category_id" ref="base.module_category_productivity"/>
+        <field name="name">Usuario modulo PC</field>
+        <field name="category_id" ref="modulo_pc.category_modulo_pc"/>
     </record>
 
     <record id="group_modulo_pc_admin" model="res.groups">
-        <field name="name">administrador modulo pc</field>
-        <field name="category_id" ref="base.module_category_productivity"/>
-        <field name="implied_ids" eval="[(4, ref('group_modulo_pc_user'))]"/>
+        <field name="name">Administrador modulo PC</field>
+        <field name="category_id" ref="modulo_pc.category_modulo_pc"/>
+        <field name="implied_ids" eval="[(4, ref('modulo_pc.group_modulo_pc_user'))]"/>
     </record>
 
 </odoo>

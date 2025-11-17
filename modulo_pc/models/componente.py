@@ -1,14 +1,10 @@
 from odoo import models, fields
 
-class PcComponente(models.Model):
-    _name = 'pc.componente'
-    _description = 'componente de pc'
+class Componente(models.Model):
+    _name = "pc.componente"
+    _description = "Componente de PC"
 
-    name = fields.Char(string='nombre tecnico', required=True)
-    especificaciones = fields.Text(string='especificaciones')
-    precio = fields.Monetary(string='precio')
-    currency_id = fields.Many2one(
-        'res.currency',
-        string='moneda',
-        default=lambda self: self.env.company.currency_id.id,
-    )
+    name = fields.Char(string="Nombre tecnico", required=True)
+    especificaciones = fields.Text(string="Especificaciones")
+    precio = fields.Monetary(string="Precio")
+    currency_id = fields.Many2one("res.currency", default=lambda self: self.env.company.currency_id)
