@@ -28,13 +28,16 @@ modulo_pc/
 ├── models/
 │   ├── __init__.py
 │   ├── componente.py
-│   └── ordenador.py
+│   ├── ordenador.py
+│   └── sistema_operativo.py
 ├── security/
-│   ├── ir.model.access.csv
-│   └── security.xml
+│   ├── category.xml
+│   ├── security.xml
+│   └── ir.model.access.csv
 └── views/
     ├── componente_views.xml
     ├── ordenador_views.xml
+    ├── sistema_operativo_views.xml
     └── menus.xml
 ```
 ---
@@ -69,9 +72,7 @@ Registra un ordenador y la informacion de este.
 - `incidencias`: Incidencias registradas 
 - `tags`: Etiquetas descriptivas
 
----
-
-## Lógica interna del módulo
+## Lógica interna del modelo:
 
 ### Restricción de fecha
 
@@ -95,48 +96,66 @@ def _compute_total(self):
         record.precio_total = sum(c.precio for c in record.components_ids)
 ```
 
----
+### 3. Modelo de sistemas operativos (`pc.sistema.operativo`)
 
-## Vistas del modulo:
+Registra diferentes sistemas operativos.
 
-El modulo contiene vistas completas tanto para ordenadores como para componentes:
+**Campo principal:**
 
-### Vistas de componentes
-
-- Lista de componentes
-
-- Formulario completo
-
-### Vistas de ordenadores
-
-- Lista con informacion clave
-
-- Formulario completo con secciones
-
-- Campo tags visible
+- `name`: Nombre del sistema operativo.
 
 ---
 
-## Seguridad y accesos
+## Vistas incluidas
 
-**El módulo define:**
+### Componentes
 
-- Grupos / tipos de usuarios en security.xml
+- Vista de lista con nombre, especificaciones y precio final unitario.
 
-- Permisos en ir.model.access.csv
+- Formulario para edicion y creacion.
+
+### Ordenadores
+
+- Vista de lista con número de equipo, usuario, precio total y numero de sistemas operativos.
+
+- Formulario para edicion y creacion con secciones.
+
+### Sistemas Operativos
+
+- Vista simple de lista y formulario.
+
+Todas estas vistas se integran en un menú principal llamado Gestión de ordenadores.
 
 ---
 
-## Cómo usarlo
+## Seguridad y permisos
 
-1. Entrar al menú Equipos Informáticos.
+El módulo define:
 
-2. Debes registrar los componentes antes de añadirlos a los PCs.
+**- Categoría de seguridad propia:** Gestión PC
 
-3. Crear un PC desde el menú Ordenadores.
+**- Dos grupos de usuario:**
 
-4. Asignar un usuario, los componentes e incidencias si estas existen al nuevo PC.
+    - Usuario del módulo
 
-5. Guardar los cambios para actualizar el precio total.
+    - Administrador del módulo
 
-6. Posteriormente podemos acceder a los PCs ya creados para modificarlos.
+**- Los permisos de acceso para cada modelo dependiendo del rol.**
+
+Los grupos de usuarios se encuentran en security/security.xml y los permisos ensecurity/ir.model.access.csv.
+
+---
+
+## Cómo usar el módulo
+
+1. Accede al menú Gestión de ordenadores.
+
+2. Registra primero los componentes y sistemas operativos que desees.
+
+3. Crea un nuevo ordenador desde el menú Ordenadores.
+
+4. Asigna un usuario, añade los componentes y asignale un sistema operatiov.
+
+5. Guarda para que se calcule el precio total.
+
+**Puedes usar los tags para filtrar equipos según características.**
