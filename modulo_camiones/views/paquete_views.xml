@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_paqueteria_paquete_list" model="ir.ui.view">
+        <field name="name">paqueteria_paquete.list</field>
+        <field name="model">paqueteria_paquete</field>
+        <field name="arch" type="xml">
+            <list string="Paquetes">
+                <field name="tracking_code"/>
+                <field name="remitente_id"/>
+                <field name="destinatario_id"/>
+                <field name="camion_id"/>
+            </list>
+        </field>
+    </record>
+    
+    <record id="view_paqueteria_paquete_form" model="ir.ui.view">
+        <field name="name">paqueteria_paquete.form</field>
+        <field name="model">paqueteria_paquete</field>
+        <field name="arch" type="xml">
+            <form string="Paquete">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="tracking_code"/>
+                        </group>
+                    </group>
+
+                    <group string="Datos de envio">
+                        <group>
+                            <field name="remitente_id"/>
+                            <field name="destinatario_id"/>
+                        </group>
+                    </group>
+
+                    <group string="Direccion de entrega">
+                        <group>
+                            <field name="country_id"/>
+                            <field name="state_id"/>
+                            <field name="municipio"/>
+                            <field name="calle"/>
+                            <field name="numero"/>
+                        </group>
+                        <group>
+                            <field name="datos_adicionales"/>
+                        </group>
+                    </group>
+
+                    <group string="Transporte">
+                        <field name="camion_id"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Seguimiento">
+                            <field name="actualizaciones_ids">
+                                <list editable="bottom">
+                                    <field name="fecha"/>
+                                    <field name="estado"/>
+                                    <field name="notas"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

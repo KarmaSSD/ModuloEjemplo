@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="module_category_paqueteria" model="ir.module.category">
+        <field name="name">Gestion de camiones</field>
+        <field name="description">Gestion de paquetes y camiones</field>
+        <field name="sequence">20</field>
+    </record>
+</odoo>

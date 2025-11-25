@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_paqueteria_root"
+              name="Gestion de camiones"
+              sequence="20"/>
+
+    <record id="action_paqueteria_paquete" model="ir.actions.act_window">
+        <field name="name">Paquetes</field>
+        <field name="res_model">paqueteria_paquete</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_paqueteria_camion" model="ir.actions.act_window">
+        <field name="name">Camiones</field>
+        <field name="res_model">paqueteria_camion</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_paqueteria_seguimiento" model="ir.actions.act_window">
+        <field name="name">Seguimientos</field>
+        <field name="res_model">paqueteria_seguimiento</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_paqueteria_paquetes"
+              name="Paquetes"
+              parent="menu_paqueteria_root"
+              action="action_paqueteria_paquete"
+              sequence="10"/>
+
+    <menuitem id="menu_paqueteria_camiones"
+              name="Camiones"
+              parent="menu_paqueteria_root"
+              action="action_paqueteria_camion"
+              sequence="20"/>
+
+    <menuitem id="menu_paqueteria_seguimientos"
+              name="Seguimientos"
+              parent="menu_paqueteria_root"
+              action="action_paqueteria_seguimiento"
+              sequence="30"/>
+</odoo>

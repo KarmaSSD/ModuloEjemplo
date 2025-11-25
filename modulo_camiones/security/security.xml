@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="group_paqueteria_user" model="res.groups">
+        <field name="name">Usuario paqueteria</field>
+        <field name="category_id" ref="modulo_camiones.module_category_paqueteria"/>
+    </record>
+
+    <record id="group_paqueteria_admin" model="res.groups">
+        <field name="name">Administrador paqueteria</field>
+        <field name="category_id" ref="modulo_camiones.module_category_paqueteria"/>
+        <field name="implied_ids" eval="[(4, ref('group_paqueteria_user'))]"/>
+    </record>
+</odoo>

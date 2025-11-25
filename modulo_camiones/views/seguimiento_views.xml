@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_paqueteria_seguimiento_list" model="ir.ui.view">
+        <field name="name">paqueteria_seguimiento.list</field>
+        <field name="model">paqueteria_seguimiento</field>
+        <field name="arch" type="xml">
+            <list string="Seguimientos">
+                <field name="paquete_id"/>
+                <field name="fecha"/>
+                <field name="estado"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_paqueteria_seguimiento_form" model="ir.ui.view">
+        <field name="name">paqueteria_seguimiento.form</field>
+        <field name="model">paqueteria_seguimiento</field>
+        <field name="arch" type="xml">
+            <form string="Seguimiento">
+                <sheet>
+                    <group>
+                        <field name="paquete_id"/>
+                        <field name="fecha"/>
+                        <field name="estado"/>
+                        <field name="notas"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
