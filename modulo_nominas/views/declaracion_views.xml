@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_declaracion_list" model="ir.ui.view">
+        <field name="name">nomina.declaracion.list</field>
+        <field name="model">nomina.declaracion</field>
+        <field name="arch" type="xml">
+            <list string="Declaraciones de la renta">
+                <field name="anio"/>
+                <field name="empleado_id"/>
+                <field name="sueldo_bruto_total"/>
+                <field name="impuestos_totales"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_declaracion_form" model="ir.ui.view">
+        <field name="name">nomina.declaracion.form</field>
+        <field name="model">nomina.declaracion</field>
+        <field name="arch" type="xml">
+            <form string="Declaración anual">
+                <sheet>
+                    <group>
+                        <field name="anio"/>
+                        <field name="empleado_id"/>
+                        <field name="sueldo_bruto_total" readonly="1"/>
+                        <field name="impuestos_totales" readonly="1"/>
+                    </group>
+
+                    <group>
+                        <field name="nomina_ids"
+                               domain="[('empleado_id', '=', empleado_id), ('fecha', '&gt;=', fecha_inicio), ('fecha', '&lt;=', fecha_fin)]"
+                               context="{'default_empleado_id': empleado_id}"
+                               readonly="1" create="0" edit="0" delete="0"
+                               options="{'no_create': True, 'no_create_edit': True}">
+                            <list>
+                                <field name="fecha"/>
+                                <field name="empleado_id"/>
+                                <field name="estado"/>
+                                <field name="sueldo_bruto"/>
+                                <field name="irpf_pagado"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_declaracion" model="ir.actions.act_window">
+        <field name="name">Declaraciones IRPF</field>
+        <field name="res_model">nomina.declaracion</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

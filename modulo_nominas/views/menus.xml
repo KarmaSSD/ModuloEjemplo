@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <menuitem id="menu_nominas_root"
+              name="Gestion de nominas"
+              sequence="30"
+              groups="modulo_nominas.group_modulo_nominas_user"/>
+
+    <menuitem id="menu_nominas_nomina"
+              name="Nominas"
+              parent="menu_nominas_root"
+              action="action_nomina"
+              sequence="10"/>
+
+    <menuitem id="menu_nominas_declaracion"
+              name="Declaraciones renta"
+              parent="menu_nominas_root"
+              action="action_declaracion"
+              sequence="20"/>
+
+</odoo>

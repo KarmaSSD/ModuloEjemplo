@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_nomina_nomina_user,access_nomina_nomina_user,model_nomina_nomina,base.group_user,1,0,0,0
+access_nomina_nomina_admin,access_nomina_nomina_admin,model_nomina_nomina,modulo_nominas.group_modulo_nominas_admin,1,1,1,1
+access_nomina_linea_user,access_nomina_linea_user,model_nomina_linea,base.group_user,1,0,0,0
+access_nomina_linea_admin,access_nomina_linea_admin,model_nomina_linea,modulo_nominas.group_modulo_nominas_admin,1,1,1,1
+access_nomina_declaracion_user,access_nomina_declaracion_user,model_nomina_declaracion,base.group_user,1,0,0,0
+access_nomina_declaracion_admin,access_nomina_declaracion_admin,model_nomina_declaracion,modulo_nominas.group_modulo_nominas_admin,1,1,1,1

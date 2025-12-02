@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_nomina_list" model="ir.ui.view">
+        <field name="name">nomina.nomina.list</field>
+        <field name="model">nomina.nomina</field>
+        <field name="arch" type="xml">
+            <list string="Nominas">
+                <field name="fecha"/>
+                <field name="empleado_id"/>
+                <field name="declaracion_id"/>
+                <field name="sueldo_base"/>
+                <field name="total_bonificaciones"/>
+                <field name="total_deducciones"/>
+                <field name="sueldo_neto"/>
+                <field name="estado"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_nomina_form" model="ir.ui.view">
+        <field name="name">nomina.nomina.form</field>
+        <field name="model">nomina.nomina</field>
+        <field name="arch" type="xml">
+            <form string="Nomina">
+                <sheet>
+
+                    <header>
+                        <button name="action_set_borrador" type="object" string="Volver a borrador"
+                                class="btn-secondary"/>
+                        <button name="action_confirmar" type="object" string="Confirmar"
+                                class="btn-primary"/>
+                        <button name="action_marcar_pagada" type="object" string="Marcar pagada"
+                                class="btn-primary"/>
+                        <field name="estado" widget="statusbar"
+                               statusbar_visible="borrador,confirmada,pagada"/>
+                    </header>
+
+                    <group>
+                        <group>
+                            <field name="empleado_id"/>
+                            <field name="fecha"/>
+                            <field name="declaracion_id"/>
+                            <field name="estado" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="sueldo_base"/>
+                            <field name="irpf"/>
+                            <field name="irpf_pagado" readonly="1"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Importes">
+                            <group>
+                                <field name="total_bonificaciones" readonly="1"/>
+                                <field name="total_deducciones" readonly="1"/>
+                                <field name="sueldo_bruto" readonly="1"/>
+                                <field name="sueldo_neto" readonly="1"/>
+                            </group>
+                        </page>
+
+                        <page string="Bonificaciones y deducciones">
+                            <field name="linea_ids">
+                                <list editable="bottom">
+                                    <field name="tipo"/>
+                                    <field name="concepto"/>
+                                    <field name="importe"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Justificante">
+                            <group>
+                                <field name="pdf_justificante" filename="pdf_justificante_filename"/>
+                                <field name="pdf_justificante_filename"/>
+                            </group>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_nomina" model="ir.actions.act_window">
+        <field name="name">Nominas</field>
+        <field name="res_model">nomina.nomina</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

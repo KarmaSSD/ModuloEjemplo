@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_nomina_linea_list" model="ir.ui.view">
+        <field name="name">nomina.linea.list</field>
+        <field name="model">nomina.linea</field>
+        <field name="arch" type="xml">
+            <list string="Lineas de nomina">
+                <field name="nomina_id"/>
+                <field name="tipo"/>
+                <field name="concepto"/>
+                <field name="importe"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_nomina_linea_form" model="ir.ui.view">
+        <field name="name">nomina.linea.form</field>
+        <field name="model">nomina.linea</field>
+        <field name="arch" type="xml">
+            <form string="Linea de nomina">
+                <sheet>
+                    <group>
+                        <field name="nomina_id"/>
+                        <field name="tipo"/>
+                        <field name="concepto"/>
+                        <field name="importe"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
