@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_form_inherit_sge_tarea13" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.sge.tarea13</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='identification_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='identification_id']" position="after">
+                <field name="dni"/>
+                <field name="nss"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
