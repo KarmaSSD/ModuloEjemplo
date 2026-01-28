@@ -8,8 +8,6 @@
                 <sheet>
                     <group>
                         <group string="Monitor (Empleado)">
-                            <!-- El nombre del empleado viaja a través de la delegación, usaremos el campo relacionado con el empleado -->
-                            <!-- Como hay conflicto con el name de evento, usamos el Many2One directo para verlo claro o lo etiquetamos -->
                             <field name="empleado_id" string="Empleado vinculado"/>
                             <field name="work_email"/>
                             <field name="mobile_phone"/>
